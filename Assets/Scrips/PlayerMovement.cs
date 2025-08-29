@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDir;
 
+    public LayerMask groundMask;
+
     private void Start()
     {
         input = GetComponent<PlayerInput>();
@@ -21,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(cameraRay, out RaycastHit hit))
+        if (Physics.Raycast(cameraRay, out RaycastHit hit, float.PositiveInfinity, groundMask))
         {
             Vector3 pos = hit.point;
             pos.y = transform.position.y;

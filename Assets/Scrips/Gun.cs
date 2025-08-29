@@ -58,7 +58,11 @@ public class Gun : MonoBehaviour
         {
             hitPosition = hit.point;
 
-            
+            var damagable = hit.collider.GetComponent<IDamagable>();
+            if (damagable != null)
+            {
+                damagable.OnDamage(gunData.damage, hit.point, hit.normal);
+            }
         }
         else
         {
