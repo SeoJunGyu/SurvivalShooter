@@ -58,12 +58,18 @@ public class Monster : LivingEntity
 
     public ParticleSystem hitEffect;
 
+    public MonDatas data;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         monCollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
+
+        MaxHealth = data.maxHp;
+        damage = data.damage;
+        agent.speed = data.speed;
     }
 
     private void Update()
@@ -105,7 +111,6 @@ public class Monster : LivingEntity
     {
         base.Die();
         CurrentStatus = Status.Die;
-        Destroy(gameObject, 3f);
     }
 
     private void UpdateIdle()

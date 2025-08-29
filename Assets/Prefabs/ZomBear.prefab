@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.96
+      value: 16.16
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalPosition.y
@@ -109,15 +109,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -188,7 +188,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &3084859751688411257
 CapsuleCollider:
@@ -348,6 +348,7 @@ MonoBehaviour:
   traceDistance: 8
   attackDistance: 1
   hitEffect: {fileID: 497402539865450298}
+  data: {fileID: 11400000, guid: b936ef525a5487f49b3863fcfdc7d6a3, type: 2}
 --- !u!4 &5379573863633869175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}
