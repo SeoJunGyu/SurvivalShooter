@@ -37,6 +37,8 @@ public class Gun : MonoBehaviour
 
     private IEnumerator CoShotEffect(Vector3 hitPosition)
     {
+        audioSource.PlayOneShot(gunData.shootClip);
+
         shootEffect.Play();
         shootEffect.lights.light.enabled = true;
 

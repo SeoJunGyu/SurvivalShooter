@@ -244,7 +244,7 @@ AudioSource:
   m_GameObject: {fileID: 5379573863633438039}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -349,6 +349,7 @@ MonoBehaviour:
   attackDistance: 1
   hitEffect: {fileID: 497402539865450298}
   data: {fileID: 11400000, guid: b936ef525a5487f49b3863fcfdc7d6a3, type: 2}
+  uiManager: {fileID: 0}
 --- !u!4 &5379573863633869175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400074, guid: c236aa7ad6dcabe47abc7d2cf903ae71, type: 3}

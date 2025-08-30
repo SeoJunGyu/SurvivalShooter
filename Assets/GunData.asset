@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98108dbc06f5abc4e9105aeaaf9672df, type: 3}
   m_Name: GunData
   m_EditorClassIdentifier: 
-  shootClip: {fileID: 0}
+  shootClip: {fileID: 8300000, guid: fa7f046ce321d4021b5e753bf1152916, type: 3}
   damage: 25
   timeBetFire: 0.12
   fireDistance: 50

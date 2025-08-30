@@ -15,4 +15,5 @@ MonoBehaviour:
   maxHp: 100
   damage: 20
   speed: 3.5
-  prefab: {fileID: 5379573863633438039, guid: e1c17b9b283ef5c41941578a6cf51e1d, type: 3}
+  damageClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
+  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}

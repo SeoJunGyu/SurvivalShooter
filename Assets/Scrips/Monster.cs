@@ -38,6 +38,8 @@ public class Monster : LivingEntity
                     animator.SetTrigger("Death");
                     agent.isStopped = true;
                     monCollider.enabled = false;
+                    uiManager.AddScore();
+                    audioSource.PlayOneShot(data.deathClip);
                     break;
             }
         }
@@ -60,12 +62,17 @@ public class Monster : LivingEntity
 
     public MonDatas data;
 
+    public UiManager uiManager;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         monCollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
+
+        var findGo = GameObject.FindWithTag("UIManager");
+        uiManager = findGo.GetComponent<UiManager>();
 
         MaxHealth = data.maxHp;
         damage = data.damage;
@@ -101,6 +108,7 @@ public class Monster : LivingEntity
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         base.OnDamage(damage, hitPoint, hitNormal);
+        audioSource.PlayOneShot(data.damageClip);
 
         hitEffect.transform.position = hitPoint;
         hitEffect.transform.forward = hitNormal;
@@ -124,12 +132,18 @@ public class Monster : LivingEntity
 
     private void UpdateTrace()
     {
+        if(target != null && Vector3.Distance(transform.position, target.position) < attackDistance)
+        {
+            CurrentStatus = Status.Attack;
+            return;
+        }
+
         agent.SetDestination(target.position);
     }
 
     private void UpdateAttack()
     {
-        if(target == null && Vector3.Distance(transform.position, target.position) > attackDistance)
+        if(Vector3.Distance(transform.position, target.position) > attackDistance)
         {
             CurrentStatus = Status.Trace;
             return;
@@ -146,7 +160,8 @@ public class Monster : LivingEntity
             var damagable = target.GetComponent<IDamagable>();
             if(damagable != null)
             {
-                damagable.OnDamage(damage, transform.position, -transform.forward);
+                damagable.OnDamage(damage, Vector3.zero, Vector3.zero);
+                Debug.Log("Ãæµ¹");
             }
         }
     }

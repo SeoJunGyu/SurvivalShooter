@@ -209,10 +209,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.03
+  m_Radius: 1.42
   m_Height: 2.1
   m_Direction: 1
-  m_Center: {x: 0, y: 1.16, z: 0}
+  m_Center: {x: 0, y: 1.22, z: 0.18}
 --- !u!195 &2251533266437191359
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ AudioSource:
   m_GameObject: {fileID: 6141302987090984352}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b84db49d40ea449aa4f3e3bd229ab5b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -349,6 +349,7 @@ MonoBehaviour:
   attackDistance: 1
   hitEffect: {fileID: 3457402541046768637}
   data: {fileID: 11400000, guid: 5f7f21e7235814c49a9b42534245961a, type: 2}
+  uiManager: {fileID: 0}
 --- !u!4 &6141302987091206528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: b77f122f451a2394898a24191c26107c, type: 3}

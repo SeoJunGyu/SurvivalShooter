@@ -858,10 +858,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.9977629
+      - time: 0.99080235
         functionName: RestartLevel
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 978a503d9bbf7f747abf8c33cd7b27c7, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
