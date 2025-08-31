@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class UiManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public Slider slider;
     public GameObject gameOver;
+    public GameObject option;
 
     int score = 0;
 
@@ -25,6 +27,8 @@ public class UiManager : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
 
+    public bool IsPaused { get; set; }
+
     private void Awake()
     {
         score = 0;
@@ -32,6 +36,9 @@ public class UiManager : MonoBehaviour
 
         bgmSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        IsPaused = false;
+        option.SetActive(IsPaused);
     }
 
     private void Start()
@@ -44,6 +51,17 @@ public class UiManager : MonoBehaviour
         }
 
         gameOverText.enabled = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            IsPaused = !IsPaused;
+            option.SetActive(IsPaused);
+
+            Time.timeScale = IsPaused ? 0 : 1;
+        }
     }
 
     public void AddScore()
@@ -102,5 +120,18 @@ public class UiManager : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         audioMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+    }
+
+    public void QuitGame()
+    {
+        EditorApplication.isPlaying = false;
+    }
+
+    public void Resume()
+    {
+        IsPaused = !IsPaused;
+        option.SetActive(IsPaused);
+
+        Time.timeScale = IsPaused ? 0 : 1;
     }
 }
