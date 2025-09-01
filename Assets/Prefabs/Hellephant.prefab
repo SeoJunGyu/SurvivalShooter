@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   traceDistance: 8
-  attackDistance: 1
+  attackDistance: 2
   hitEffect: {fileID: 3457402541046768637}
   data: {fileID: 11400000, guid: 5f7f21e7235814c49a9b42534245961a, type: 2}
   uiManager: {fileID: 0}
